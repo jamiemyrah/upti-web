@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import CategoryListItem from './CategoryListItem';
+import electroicImage from '../img/product.png';
 
 export default class MasterDetail extends Component {
     state = {
@@ -8,12 +9,12 @@ export default class MasterDetail extends Component {
             {
                 name: 'Electronic',
                 numberOfItemsInStock: 3,
-                image: ''
+                image: electroicImage
             },
             {
                 name: 'Foot Ware',
-                numberOfItemsInStock: 3,
-                image: ''
+                numberOfItemsInStock: 2,
+                image: electroicImage
             },
             {
                 name: 'Jewellry',
@@ -22,10 +23,17 @@ export default class MasterDetail extends Component {
             },
             {
                 name: 'Entertainment',
-                numberOfItemsInStock: 2,
-                image: ''
+                numberOfItemsInStock: 3,
+                image: electroicImage
+            },
+            {
+                name: 'Mens Ware',
+                numberOfItemsInStock: 5,
+                image: electroicImage
             },
         ]
+
+
     }
 
     handleChildClick = (id, isActive) => {
@@ -34,20 +42,19 @@ export default class MasterDetail extends Component {
             activeItem = id;
         }
         this.setState({ activeItem });
-        this.props.onAciveCategoryChange(activeItem);
+        this.props.onActiveCategoryChange(activeItem);
     }
 
     render() {
         return (
             <ol className="list-group">
                 {
-                    this.state.categories.map((category) => {
+                    this.state.categories.filter(category => category.numberOfItemsInStock > 0).map((category) => {
                         return <CategoryListItem
                             key={category.name}
                             id={category.name}
                             category={category}
-                            name={category.name}
-                            number={category.numberOfItemsInStock}
+                            numberOfItemsInStock={category.numberOfItemsInStock}
                             onChildClick={this.handleChildClick}
                             activeItem={this.state.activeItem} />
                     })}
