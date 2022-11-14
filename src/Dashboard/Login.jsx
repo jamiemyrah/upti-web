@@ -6,7 +6,7 @@ export default class Login extends Component {
     return (
      <div className="d-flex align-items-center justify-content-center ">
      <div className='text-center container'>
-        <h4 className='my-5'>Login </h4>
+        <h4 className='my-5'>Login with facebook</h4>
         <div className=' '>
           <input type="text" placeholder='Enter  your First name' className="w-50" /><br/>
          <input type="text" placeholder='Enter  your Last name' className="w-50 my-4" /><br/>
