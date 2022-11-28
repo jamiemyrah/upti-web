@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import CategoryListItem from './CategoryListItem';
-import electroicImage from '../img/product.png';
+// import electroicImage from '../img/product.png';
+
 
 export default class MasterDetail extends Component {
     state = {
@@ -9,12 +10,12 @@ export default class MasterDetail extends Component {
             {
                 name: 'Electronic',
                 numberOfItemsInStock: 3,
-                image: electroicImage
+                image: ''
             },
             {
                 name: 'Foot Ware',
                 numberOfItemsInStock: 2,
-                image: electroicImage
+                image: ''
             },
             {
                 name: 'Jewellry',
@@ -24,13 +25,9 @@ export default class MasterDetail extends Component {
             {
                 name: 'Entertainment',
                 numberOfItemsInStock: 3,
-                image: electroicImage
+                image: ''
             },
-            {
-                name: 'Mens Ware',
-                numberOfItemsInStock: 5,
-                image: electroicImage
-            },
+            
         ]
 
 
