@@ -1,17 +1,20 @@
-import React, { Component } from 'react'
-import { Link } from 'react-router-dom';
-import laptop from "../img/speakers.jpeg";
+import React, { useState} from 'react'
+import { Link, useParams } from 'react-router-dom';
+import { products } from "../product/ProductsData";
 
-export default class productDetails extends Component {
-  render() {
-    return (
-      <div>
-        <h1>productDetails</h1>
-        <p>Hi everyone here this is your favourite car on the market</p>
+const ProductDetails = (props) => {
+      const params = useParams();
+      const id = +params.id;
+      const product = products.filter(p => p.id === id)[0];
+     return (
+      <div className='container'>
+        <h1>{product.name}</h1>
+        <p>{product.description}</p>
+        <p>{product.price}</p>
         <div className="row">
           <div className="col-md-4">
         
-          <img src={laptop} alt="product" style={{width: "100%"}} />
+          <img src={product.image} alt="product" style={{width: "100%"}} />
           </div>
         </div>
         <Link to="ShoppingCart"></Link>
@@ -19,4 +22,5 @@ export default class productDetails extends Component {
       
     )
   }
-}
+
+export default ProductDetails;

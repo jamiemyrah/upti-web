@@ -20,8 +20,8 @@ export default class Product extends Component {
             bulk of the card's content.
           </p>
           <Link
-            to="/MainLayout/Product-details/"
             className="btn btn-primary"
+            to={`Product-details/${this.props.product.id}/${this.props.product.name}`}
             style={{
               justifyContent: "center",
               alignItems: "center",
